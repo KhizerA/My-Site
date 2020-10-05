@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 96  # Order that this section will appear.
 
 title = "Gallery"
-subtitle = ""
+subtitle = "favourite photos I've taken"
 +++
 
 {{< gallery >}}
