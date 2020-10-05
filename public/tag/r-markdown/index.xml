@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Markdown | Khizer Asad</title>
+    <link>/tag/r-markdown/</link>
+      <atom:link href="/tag/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <description>R Markdown</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 27 Sep 2020 13:09:13 -0600</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>R Markdown</title>
+      <link>/tag/r-markdown/</link>
+    </image>
+    
+    <item>
+      <title>Toronto&#39;s Shelters During the COVID-19 Pandemic</title>
+      <link>/post/ps1/</link>
+      <pubDate>Sun, 27 Sep 2020 13:09:13 -0600</pubDate>
+      <guid>/post/ps1/</guid>
+      <description>
+
+
+&lt;div id=&#34;abstract&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;This study seeks to examine the effects of the COVID-19 pandemic on the occupancy of Toronto’s homeless shelters. From the public Shelter Occupancy data set it is observed that during the spread of the virus, demand for spaces in shelters decreased significantly. Although there is not enough data available to fully comprehend the causal factors of this perhaps surprising result.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;The Toronto open data portal contains many up to date public data sets concerning the cities on goings, one of which is the homeless shelter occupancy statistics. It is conveniently for our use updated every day so we can examine the daily changes of those utilizing the city’s public shelters (City of Toronto 2020). Given the availability of this data alongside the obvious confirmed COVID-19 cases data for the city I decided to examine the impact of the pandemic on Toronto’s shelters (City of Toronto 2020). The results that were observed are quite interesting, and perhaps counter-intuitive.&lt;/p&gt;
+&lt;p&gt;To run a comparative analysis of these two data sets the following variables were used:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Shelter data set: date, daily capacity, daily occupancy&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;COVID-19 data set: date, daily new cases&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-exploration&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data Exploration&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;/post/PS1_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;To first contextualize the analysis, the timeline of positive COVID-19 cases in Toronto can be seen in Figure 1. The extent of the virus was realized in mid-March when new cases had started to significantly escalate. At this point the city of Toronto and provincial government began to implement restrictions on the number of people allowed in enclosed areas, including in public spaces such as homeless shelters (Nielsen 2020). These were put in place for the safety of citizens health and to mitigate the spread of the virus, though for spaces such as shelters this could have potentially worked in the detriment of those that rely on the shelter system. Perhaps even more so during a period of economic downturn that saw unemployment in the city rise by almost 10%, which could potentially cause a rise in demand for shelters with the looming housing crisis (Statistics Canada 2020).&lt;/p&gt;
+&lt;p&gt;As crowd restrictions had to be put in place, the number of people that existing homeless shelters could accommodate would have to decrease. The evident effect of the pandemic on shelter capacity is reflected below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/PS1_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 2 shows that prior to COVID-19 protocols shelters had the capacity to accommodate between 7000-7500 people daily. And we can see in that in response to the pandemic the city actually increased their capacity in March by re-purposing commercial spaces such as hotels and motels that were closed as part of the COVID-19 response (City of Toronto 2020). However we surprisingly see a sharp decline in capacity after then till now (September). The data set’s description states that capacity is not a metric defined by the number of available beds, rather it is actually based on the funding provided to the city’s shelters. Hence we can see that funding for shelters’ capacity actually decreased during the pandemic. Now this posits the question of whether this was a supply or demand side shock, mechanistically what caused this decline in shelters capacity?&lt;/p&gt;
+&lt;p&gt;The data presented below may help us answer that question:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/PS1_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 3 provides us with the insight we may need to answer the posited question. The top diagram visualizes the occupancy of Toronto’s shelters, and was affected similar to how shelter capacities were affected by the virus. From April when COVID-19 cases in the city began to significantly rise shelters started to actually decrease in occupancy. For those suffering from a lack of housing one may think that demand for shelters would increase during the pandemic, as people would be averse to spending the night in public or crowded areas.&lt;/p&gt;
+&lt;p&gt;Though we can see this was actually not the case, not only did the number of occupants change, Figure 3 highlights how the percentage of occupancy decreased as well (i.e. number of occupants/capacity). Prior to COVID-19 protocols we can see that shelters were sitting at around 95% of capacity, however from April onwards the figure actually began to decline, falling as low as 65%. Hence it is evident that the decrease in funding for capacity in shelters was actually caused by a decrease in demand from the public.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;closing-remarks&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Closing Remarks&lt;/h1&gt;
+&lt;p&gt;Of course the available statistics can’t explain the whole story, so it would be unwise to simply conclude that demand for shelters decreased, hence the city began to invest less in them. The data set lacks some critical information that would assist in explaining the mechanism by which this has occured. One of the reasons being a temporary housing program put in to place during the pandemic, which re-settled some shelter users in to apartments to further curb the spread of the virus (Kivanc 2020). The figures from this program were unfortunately not included in the shelters data set.&lt;/p&gt;
+&lt;p&gt;Additionally many members of the homeless community became concerned with the response of some shelters to the pandemic, citing that many were not taking social distancing protocols seriously. This coupled with news of the virus spreading in some shelters pressured many to decide to stop spending nights at the shelter they would usually frequent, and rather look for alternatives including homeless encampments where they would have the safety of having their own tents (Medford 2020, Ferreira 2020).&lt;/p&gt;
+&lt;p&gt;Whether the city’s COVID-19 response with respect to the homeless community has been successful is yet to be seen, more research in to shelter users reaction to the pandemic would need to be conducted. All figures have been compiled together below for the convenience of the reader:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/PS1_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;768&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;All code can be found &lt;a href=&#34;https://github.com/KhizerA/Blogdown/blob/master/content/post/2015-07-23-r-rmarkdown.Rmd&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;p&gt;City of Toronto. (2020). COVID-19 Cases in Toronto. Retrieved from &lt;a href=&#34;https://open.toronto.ca/dataset/covid-19-cases-in-toronto/&#34; class=&#34;uri&#34;&gt;https://open.toronto.ca/dataset/covid-19-cases-in-toronto/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;City of Toronto. (2020). Daily Shelter Occupancy. Retrieved from &lt;a href=&#34;https://open.toronto.ca/dataset/daily-shelter-occupancy/&#34; class=&#34;uri&#34;&gt;https://open.toronto.ca/dataset/daily-shelter-occupancy/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;City of Toronto. (2020, August 07). City of Toronto COVID-19 Response for People Experiencing Homelessness. Retrieved from &lt;a href=&#34;https://www.toronto.ca/news/city-of-toronto-covid-19-response-for-people-experiencing-homelessness/&#34; class=&#34;uri&#34;&gt;https://www.toronto.ca/news/city-of-toronto-covid-19-response-for-people-experiencing-homelessness/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ferreira, J. (2020, May 23). The toll COVID-19 is taking on Canada’s homeless. Retrieved from &lt;a href=&#34;https://www.ctvnews.ca/health/coronavirus/the-toll-covid-19-is-taking-on-canada-s-homeless-1.4950722&#34; class=&#34;uri&#34;&gt;https://www.ctvnews.ca/health/coronavirus/the-toll-covid-19-is-taking-on-canada-s-homeless-1.4950722&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jeffrey B. Arnold (2019). ggthemes: Extra Themes, Scales and Geoms for ‘ggplot2’. R package
+version 4.2.0. &lt;a href=&#34;https://CRAN.R-project.org/package=ggthemes&#34; class=&#34;uri&#34;&gt;https://CRAN.R-project.org/package=ggthemes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron
+Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020).
+rmarkdown: Dynamic Documents for R. R package version 2.3. URL &lt;a href=&#34;https://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;https://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Kivanc, J. (2020, August 04). ‘COVID made my life better,’ Toronto’s homeless say of temporary apartments. Retrieved from &lt;a href=&#34;https://www.cp24.com/news/covid-made-my-life-better-toronto-s-homeless-say-of-temporary-apartments-1.5050104&#34; class=&#34;uri&#34;&gt;https://www.cp24.com/news/covid-made-my-life-better-toronto-s-homeless-say-of-temporary-apartments-1.5050104&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Medford, M. (2020, August 01). Refugee Shares Story Of Living Through Pandemic In Homeless Shelter. Retrieved from &lt;a href=&#34;https://www.huffingtonpost.ca/entry/toronto-homeless-shelter-pandemic-covid_ca_5f035e1cc5b6ca97092211f9&#34; class=&#34;uri&#34;&gt;https://www.huffingtonpost.ca/entry/toronto-homeless-shelter-pandemic-covid_ca_5f035e1cc5b6ca97092211f9&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nielsen, K. (2020, July 16). A timeline of the novel coronavirus in Ontario. Retrieved from &lt;a href=&#34;https://globalnews.ca/news/6859636/ontario-coronavirus-timeline/&#34; class=&#34;uri&#34;&gt;https://globalnews.ca/news/6859636/ontario-coronavirus-timeline/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;R Core Team (2020). R: A language and environment for statistical computing. R Foundation for
+Statistical Computing, Vienna, Austria. URL &lt;a href=&#34;https://www.R-project.org/&#34; class=&#34;uri&#34;&gt;https://www.R-project.org/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Statistics Canada. (2020). Labour force characteristics by census metropolitan area. Retrieved from &lt;a href=&#34;https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410029401&#34; class=&#34;uri&#34;&gt;https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410029401&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43),
+1686, &lt;a href=&#34;https://doi.org/10.21105/joss.01686&#34; class=&#34;uri&#34;&gt;https://doi.org/10.21105/joss.01686&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
