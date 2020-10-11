@@ -3,11 +3,7 @@ title: 'Petit Poll: Survey Proposal for the National Democratic Party'
 author: "Khizer Asad"
 date: 2020-10-09T13:09:13-06:00
 categories: ["R"]
-output:
-  html_document:
-    df_print: paged
-  word_document: default
-  pdf_document: default
+tags: ["R Markdown", "plot"]
 ---
 
 ```{r setup, include=FALSE}
