@@ -1,0 +1,349 @@
+---
+title: 'Petit Poll: Survey Proposal for the National Democratic Party'
+author: "Khizer Asad"
+date: "08/10/2020"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(plyr)
+library(grid)
+library(devtools)
+library(ggthemes)
+library(gt)
+library(scales)
+#Setting seed for reproducability
+set.seed(1002605120)
+```
+
+# Executive summary
+
+Petit Poll has been asked to produce a monthly survey for the National Democratic Party (NDP), to provide them with data that can assist in their campaign for the 2022 Ontario general assembly elections. We have designed a mailed survey targeting voters in all 124 electoral districts with 28,000 surveys sent out monthly, which should yield approximately 7,000 responses per month with am expense budget totaling $5,000/month. The goal of this survey is to provide the NDP with very actionable data that includes respondents: demographics, political history, and political views. The questions are designed so the help with the party's macro policy for the province, and also for their individual candidates to make use of in their own electoral districts. Using the data as feedback over time the NDP can optimize their campaigning strategies to win a majority in the 2022 general election.  
+
+# Introduction
+
+In the 2018 Ontario general election for the province's legislative assembly the Liberal party lost their majority rule of the assembly after winning the last 4 elections. Ontario is a historically Liberal province, though due to a provincial campaign marred with controversies in 2018 they lost their majority to the Progressive Conservatives (PC) party. The New Democratic Party (NDP) also greatly benefited in 2018 by more than doubling their previous number of seats in the assembly and becoming the official opposition party (CBC 2018).
+
+Looking forward to the 2022 Ontario general election the NDP may have a legitimate chance of taking the election given the PC party's low approval rating during their term (Fournier 2019). To improve their chances of winning in 2022 the NDP has hired Petit Poll to conduct surveying of Ontario citizens to improve their campaigning.  
+
+Petit Poll has designed a monthly survey targeting individuals in all 124 of Ontario's electoral districts that will gauge political views and leanings by demographics. The NDP can then employ these results to optimize their campaigning strategies leading in to 2022. 
+
+# Survey methodology 
+
+The population frame is all eligible voters living in Ontario, while the sampling frame is those we can reach via a mail interview. In order to provide the most valuable survey data for the NDP's use a stratified randomly sampled with replacement methodology. The goal is to target people in every electoral district so to have data valuable for the party's macro provincial campaign as well as for every NDP party candidate in each electoral district.
+
+For this study the most robust medium of surveying would be mail in surveys. It will allow us to target Ontario residents specifically and will have a reasonably high response rate (Deane et al. 2019). 
+
+With a monthly budget of approximately \$5,000 (\$60,000/year) we have designed a survey methodology to target about 28,125 people monthly. It is budgeted accordingly: 
+ 
+* \$500 incentives (\$50 x 10 gift card raffle) 
+* \$4500 Canada Post mailing costs ([\$0.16 per letter](https://www.canadapost.ca/cpc/en/business/marketing/campaign/reach-every-mailbox.page))
+
+To ensure the best sampling practices the 28,125 letters sent out using Canada Post's business services will be divided up between electoral district by their population (e.g. if two districts have 100,000 and 30,000 residents the same percent of their residents will receive the survey). Canada Post's services include mailing to randomized addresses in any area so random sampling is fairly easy. 
+
+We estimate that the response rate will be %25 (Deane et al. 2019), hence we will receive approximately 7,000 responses per month or 84,000 annually. Additionally the data collected will be anonymous respondents named and addresses will be collected though kept independent of their responses for the random gift card draw. For the convenience of the respondents they will have the option to either mail back their responses or visit a link of the email to complete the survey online. Only those of age to vote and are Canadian citizens will be eligible to complete the survey.    
+
+# Discussion 
+
+The survey that respondents receive consist of three parts: demographic information, political history, political views. The demographics section will allow the party to filter responses by certain population at their discretion so they can see the interests of different groups and know how to market to them accordingly. the second section, political history, will allow the party to see likelihood of the respondent voting in the next general election as well as their party affiliations. These can be informative of how and which non-voters the NDP can mobilize, and which groups of people to campaign for (e.g. to gain new voters the NDP will likely have to invest more in non-NDP supporters). The last section is perhaps the most critical for framing the campaigning efforts, as it shows us the opinions of respondents regarding issues on the NDP agenda. By seeing the issues voters are most or least passionate on it will allow the party to form the most optimal political campaigning. To see all 35 survey questions and the reasoning behind them please refer to the appendix of the report. 
+
+Now we will simulate some responses to see exactly how the data can be used on a monthly basis. Using census data for our demographics we randomly generate 7000 responses. So for instance we could see the level of education of our respondents, from historical polling data we know that this is a significant variable in influencing electoral tendencies (Statistics Canada).  
+
+```{r, include=FALSE}
+#Monthly estimated responses
+n <- 28125*0.25
+results <-data.frame(index = c(1:n))
+#Simulating response data (mostly random)
+#Part 1
+#For demographics there doesn't seem to be any very strong correlations between the variables
+#so will leave them as independent
+#https://bit.ly/2I6jO4p  
+age <- sample(x = c("18-24","25-44", "45-64", "65+"), size = n, replace = TRUE, 
+              prob = c(0.1096, 0.3382, 0.3299, 0.2223))
+results$age = age
+#https://bit.ly/3iKsN80
+#gender split pretty even so we'll just keep it 50/50 for male/female 
+#as statistics for other genders are not available
+results$gender <- sample(x=c("Male", "Female"), size = n, replace = TRUE, prob = c(0.5,0.5))
+#https://bit.ly/3iJnRk3
+results$race <- sample(x = c("Indigenous", "White", "Black", "Asian", "South Asian", "ME", "Latin", "Other"),
+               size = n, replace = TRUE, prob = c(0.039, 0.678 ,0.047, 0.1, 0.087, 0.028, 0.015,0.006))
+#https://bit.ly/36LKi5v
+results$immigrant <- sample(x=c("Yes", "No"), size = n, replace = TRUE, prob = c(0.3,0.7))
+#https://bit.ly/3iPRBfa
+results$edu <-sample(x=c("No diploma", "High school diploma", "Diploma/certificate", "Some university", 
+                 "Bachelors+"), size= n, replace = TRUE, 
+             prob = c(0.103, 0.245, .309, 0.024, 0.319))
+#https://bit.ly/3nrkaTD
+results$ppl <- sample(x=c("1","2","3","4","5+"), size = n, replace = TRUE,
+              prob = c(0.259, 0.328, 0.161, 0.154, 0.097))
+
+#Part 2
+#https://results.elections.on.ca/en/graphics-charts
+results$voted <- sample(x = c("Yes", "No"), size = n, replace = TRUE, prob = c(0.5667, 0.4333))
+#https://www.jstor.org/stable/25193865?seq=1
+voted_party <- c(1:n)
+will.vote <- c(1:n)
+for (i in 1:n) {
+  if (results$voted[i] == "Yes") {
+    voted_party[i] <- sample(x=c("PC", "NDP", "Liberal Party", "Green Party", "Other"),
+                             size = 1, replace = TRUE, 
+                             prob = c(0.405, 0.336, 0.196, 0.046, 0.017))
+    will.vote[i] <- sample(x=c("Yes", "No"), size = 1, replace = TRUE, 
+                           prob = c(0.63,0.37))
+  } else {
+    voted_party[i] <- NA
+    will.vote[i] <- sample(x=c("Yes", "No"), size = 1, replace = TRUE, 
+                           prob = c(0.5,0.5))
+  }
+}
+results$voted_party <- voted_party
+results$will.vote <- will.vote
+
+results$politics <- sample(x=c("No", "Somewhat", "Informed", "Active", "Engaged"), size = n,
+                   replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+#Part 3
+results$immigration <- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                   replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$tax<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+             replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$min.wage<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                  replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$energy<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$union<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+               replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$comm<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+              replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$gun<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+             replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$lgbtq<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+               replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$gender.eq<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                   replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$drugs<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+               replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$wfh<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+             replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$welfare<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                 replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$ubi<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+             replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$health<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$dental<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$optical<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                 replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$pipeline<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                  replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$tuition<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                 replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$police<- sample(x=c("Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"), size = n,
+                replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$vaccine<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                 replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$ineq<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+              replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$privacy<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                 replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$detention<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                   replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+results$racism<- sample(x=c("SD", "D", "N", "A", "SA"), size = n,
+                replace = TRUE, prob = c(0.2,0.2,0.2,0.2,0.2)) 
+```
+
+```{r echo=FALSE, fig.align="center", fig.width=8, fig.height=4}
+#Figure 1: "What is the highest level of education you have attained" bar graph
+theme_set(theme_economist())
+results %>% 
+  ggplot(aes(x = edu)) +
+  geom_bar(fill = "lightpink3") +
+  labs(x= "", y="Number of responses", title = "Figure 1",
+       subtitle = "What is the highest level of education you have attained?") +
+  theme(plot.title = element_text(face = "bold")) +
+  ylim(c(0,2500))
+```
+
+Figure 1 shows us the level of education that respondents have attained, the two most prominent categories being a Bachelors degree or higher and a college or vocation diploma/certificate. Data such as this is openly available from the census and several other sources so this in itself is not the most valuable. However this is where the value of part 2 and 3 of the survey come in to play. For instance, now we are able to extract the likelihood of someone intending to vote in 2022 given their level of education. 
+
+
+```{r echo=FALSE, fig.align="center"}
+#Figure 2: Will you vote in the 2020 general election (by education level)
+voting <- tibble(c(1:n))
+bach <- which("Bachelors+" == results$edu)
+c_bach <- 0
+cert <- which("Diploma/certificate" == results$edu)
+c_cert <- 0
+high <- which("High school diploma" == results$edu)
+c_high <- 0
+nd <- which("No diploma" == results$edu)
+c_nd <- 0
+su <- which("Some university" == results$edu)
+c_su <- 0
+for (i in 1:length(bach)) {
+  if (results$will.vote[bach[i]] == "Yes") {
+    c_bach <- c_bach + 1
+  }
+}
+for (i in 1:length(cert)) {  
+    if (results$will.vote[cert[i]] == "Yes") {
+    c_cert <- c_cert + 1
+    }
+}
+for (i in 1:length(high)) {
+    if (results$will.vote[high[i]] == "Yes") {
+    c_high <- c_high + 1
+    }
+}
+for (i in 1:length(nd)) {
+    if (results$will.vote[nd[i]] == "Yes") {
+    c_nd <- c_nd + 1
+    }
+}
+for (i in 1:length(su)) {
+    if (results$will.vote[su[i]] == "Yes") {
+    c_su <- c_su + 1
+    }
+}
+fig2 <- data.frame(Education =  (count(results$edu)[1]), 
+               Responses = (count(results$edu)[2]),
+               yes = c(c_bach, c_cert, c_high, c_nd, c_su),
+               ratio = c(c_bach/count(results$edu)[1,2], c_cert/count(results$edu)[2,2], 
+                         c_high/count(results$edu)[3,2], c_nd/count(results$edu)[4,2],
+                         c_su/count(results$edu)[5,2]))
+colnames(fig2) <- c("Education Level", "Number of Responses", "'Yes' to Voting in 2020",
+                    "Ratio")
+fig2 %>% gt() %>%
+  fmt_number(columns = vars(Ratio), decimals = 2) %>%
+  tab_header(title = "Figure 2", subtitle = "Do you intend on voting in the 2020 general election?") %>%
+  data_color(columns = vars(Ratio), colors = "#EE6565") %>%
+  tab_options(table.background.color = "#DFF1FF") %>%
+  tab_style(style = cell_borders(sides = "all", color = "#000000", style = "solid", 
+                                 weight = px(1)),
+            locations = cells_body())
+```
+ 
+ 
+From the fourth column in Figure 2 we can observe the ratio of people that say yes to intending on voting in the 2022 general election. Using a statistic like this the party can shape their campaigning strategies to different demographics. For instance in this simulated data those with a Bachelor's degree or greater have a greater chance of voting than someone without any diploma. So for higher educated citizens the campaigning strategy may rely more on policy, whilst for the less educated the focus may be more so on mobilizing the non-voters.
+
+Part 3 of the survey collects opinions on specific policies that are within the NDP's agenda. Using data from these responses we can see which policies people of various backgrounds hold most valuable and can adjust campaigning accordingly to maximize potential voters.
+
+
+```{r echo=FALSE, fig.align="center"}
+#Figure 3: we should divest from police services
+theme_set(theme_economist())
+results %>% 
+  ggplot(aes(x = police)) +
+  geom_bar(fill = "lightpink3") +
+  labs(x= "", y="Number of responses", title = "Figure 3",
+       subtitle = "We should divest from police services") +
+  theme(plot.title = element_text(face = "bold")) +
+  ylim(c(0,2500))
+```
+
+Figure 3 serves as an example of such, it shows us the level of agreement respondents had to the proposition of divesting from police services. Of course in real, non-randomly simulated data the responses ought to be more diverse which would allow for a better gauge of the public's opinion of the policy. Adding further nuance to this example, we could observe the responses by age group. 
+
+
+```{r echo=FALSE, fig.align="center"}
+#Figure 4: proporation of people that strongly agree with defunding the police by age
+age_pie <- vector()
+for (i in 1:n) {
+  if (results$police[i] == "Strongly Agree") {
+    age_pie <- append(age_pie, results$age[i])
+  }
+}
+len <- length(age_pie)
+theme_set(theme_economist())
+
+pie <- 
+  count(age_pie) %>%  
+    ggplot( aes(x = "",y= ((100*freq)/len), fill=x))+
+    geom_bar(width = 1, stat = "identity")+
+    coord_polar("y")
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+pie + scale_fill_brewer("Age Ranges") + blank_theme +
+  theme(axis.text.x=element_blank()) +
+  labs(title = "Figure 4", subtitle = "Proportion of people that Strongly Agree by age group")
+
+```
+
+
+Figure 4 shows us what that data may look like. Information such as this can be a powerful tool for shaping the party's actions and growing their voter base. If we are able to isolate which groups of people strongly favour certain policies, they can be marketed to accordingly. Additionally another benefit of this survey design is that the individual NDP candidates can use the data exclusively from their electoral district to see what their residents value the most. This can go a long way in getting voters to change their allegiances if they notice another party's candidate is better catering to their demands. 
+
+As this is a monthly recurring survey (though not necessarily always sent to the same people), the party's administration can use the data to also determine if their current endeavours are working in their favour or if they need to change up their campaigning. 
+
+# Comments 
+
+The data used in these examples was randomly simulated, and is not accurate nor statistically significant, so we can not demonstrate the use of summary statistics. However when real data is collected the party will be able to use various analytic methods to extract the strongest interactions between variables to optimize their platform. 
+
+Some caveats, firstly the final survey is 35 questions, which provides a good actionable amount of data, but of course there are some potential questions that had to be left out in order to ensure a higher response rate for peoples time sake. Additionally mailed surveys may contain a sampling bias, as those without permanent addresses will not be able to receive the survey. Furthermore, in family households there may be a recurring pattern of who in the household handles the mail, which may lead to an over representation of a certain party in the data. With these limitations in mind Petit Poll is still confident in this methodology, as it is the most effective method given the available resources. 
+
+## Survey
+
+[Link to the survey](https://khizerasad1.typeform.com/to/EGIbrntS)
+
+# Appendix
+
+Discussion on question selection
+
+* Part 1 (demographics): the goal was not to overload on questions to create dozens of categories, rather using the available literature to only include variables known to have a known correlation with voter behaviour (Statistics Canada). 
+  + Includes questions on: age, gender, race/ethnicity, immigrant status, education. 
+  + Also including a question on the number of people in their household, as families are       more likely to vote for the same party, so we can gauge an approximate number of voters.
+* Part 2 (political history): This section is to identify the political tendencies of respondents. 
+  + The first few questions are designed to determine if the respondent will be voting in       2022, and where their party allegiances lie.
+  + Question 6 from the polling literature is an important question to include, as often the     public's perception of who will win can shape their behaviour and also be a good            estimator of election outcomes (Deane et al. 2019).  
+  + Question 7 will help measure the political engagement of respondents in order to            determine what depth of campaigning to use.
+* Part 3 (political opinions): We collect the views of the public on policies in the NDP    charter. Polarizing policy statements are made so to illicit a strong reaction from respondents to the questions in the form of agreement or disagreement. This data can be much more valuable to the party as opposed to general less polarizing statements that may not provide as actionable data (e.g. we should decrease taxes, or we should spend more on education).
+
+[Link to code used](https://github.com/KhizerA/PS2)
+
+# References
+
+“Census Profile 2016.” Statistics Canada, 2017, www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/index.cfm?Lang=E. 
+
+Deane, Claudia, et al. “Election 2020 Polling Field Guide.” Pew Research Center Methods, Pew Research Center, 30 Dec. 2019, www.pewresearch.org/methods/2019/11/19/a-field-guide-to-polling-election-2020-edition/. 
+
+Fournier, Philippee J. “338Canada: How Bad Things Are for Doug Ford.” Macleans.ca, 18 Dec. 2019, www.macleans.ca/politics/338canada-how-bad-things-are-for-doug-ford/. 
+
+“Graphics & Charts.” Elections Ontario, 2018, results.elections.on.ca/en/graphics-charts. 
+
+Jeffrey B. Arnold (2019). ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'. R package
+  version 4.2.0. https://CRAN.R-project.org/package=ggthemes
+  
+JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron
+  Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020).
+  rmarkdown: Dynamic Documents for R. R package version 2.3. URL https://rmarkdown.rstudio.com.
+  
+“Ontario Election Results From CBC News.” CBCnews, CBC/Radio Canada, 7 June 2018, newsinteractives.cbc.ca/onvotes/results/. 
+
+Statistics Canada. “Factors Associated with Voting.” Statistics Canada: Canada's National Statistical Agency , 27 Nov. 2015, www150.statcan.gc.ca/n1/pub/75-001-x/2012001/article/11629-eng.htm. 
+
+Richard Iannone, Joe Cheng and Barret Schloerke (2020). gt: Easily Create
+  Presentation-Ready Display Tables. R package version 0.2.2.
+  https://CRAN.R-project.org/package=gt
+
+R Core Team (2020). R: A language and environment for statistical
+  computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL https://www.R-project.org/.
+  
+R Core Team (2020). R: A language and environment for statistical computing. R Foundation for
+  Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+  
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open
+  Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
