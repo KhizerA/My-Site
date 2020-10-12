@@ -34,32 +34,47 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-09-27T13:09:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/plot/</loc>
-    <lastmod>2020-09-27T13:09:13-06:00</lastmod>
+    <lastmod>2020-10-12T13:09:13-06:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-09-27T13:09:13-06:00</lastmod>
+    <lastmod>2020-10-12T13:09:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/python/</loc>
+    <lastmod>2020-10-12T13:09:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/webscrape/</loc>
+    <lastmod>2020-10-12T13:09:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/ps2/</loc>
+    <lastmod>2020-10-09T13:09:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/plot/</loc>
+    <lastmod>2020-10-09T13:09:13-06:00</lastmod>
   </url>
   
   <url>
     <loc>/category/r/</loc>
-    <lastmod>2020-09-27T13:09:13-06:00</lastmod>
+    <lastmod>2020-10-09T13:09:13-06:00</lastmod>
   </url>
   
   <url>
     <loc>/tag/r-markdown/</loc>
-    <lastmod>2020-09-27T13:09:13-06:00</lastmod>
+    <lastmod>2020-10-09T13:09:13-06:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-09-27T13:09:13-06:00</lastmod>
+    <lastmod>2020-10-09T13:09:13-06:00</lastmod>
   </url>
   
   <url>

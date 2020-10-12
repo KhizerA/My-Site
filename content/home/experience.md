@@ -39,7 +39,29 @@ experience:
   date_start: "2019-07-01"
   description: |-
     Working directly with clients under a Partner and their team to produce audit reports or provide accounting services. I was assigned individual tasks which had to be completed under strict deadlines, usually on a daily or weekly basis. These tasks entailed extensive data parsing, writing reports, and reviewing others reports; all using a variety of data management and word processing software.
-
   location: Bahrain
   title: Intern
+- company: University of Toronto Statistical Sciences Union
+  company_url: ""
+  date_end: "2017-05-03"
+  date_start: "2016-09-01"
+  description: |-
+    Acting as an elected representative for Statistical Sciences students at the University of Toronto with the goal of satisfying their needs by acting as a liaison between the student body and the faculty.
+  location: Toronto
+  title: Information Director  
+- company: Pakistan Development Foundation
+  company_url: ""
+  date_end: "2019-09-01"
+  date_start: "2017-09-01"
+  description: |-
+    Managing the organization's finances and finance associates to ensure that our budget was most effectively utilized and charitable fundraising was maximized. 
+  location: Toronto
+  title: Finance Director
+- company: Bed Bath & Beyond
+  company_url: ""
+  date_end: "2019-06-01"
+  date_start: "2017-05-01"
+  description: |-
+    Assisting customers and closing sales using product knowledge. Responsibilities also included arranging the appearance of the store to maximize sales, and managing stock. 
+  title: Sales Associate (Part-time)
 ---

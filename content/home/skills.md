@@ -50,9 +50,9 @@ subtitle = ""
   name = "Social Media Management"
 
 [[feature]]
-  icon = "gamepad"
+  icon = "headset"
   icon_pack = "fas"
-  name = "E-sports"
+  name = "Communication"
   
 [[feature]]
   icon = "camera-retro"

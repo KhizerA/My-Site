@@ -18,7 +18,7 @@ bio: My research interests include policy, development, and data science.
 
 # Interests to show in About widget
 interests:
-- Political Science
+- Public Policy
 - Statistics
 - Education
 - Development Studies
@@ -75,7 +75,7 @@ user_groups:
 
 Khizer Asad is a recent graduate looking for a professional or research position. He is keen on pursuing a career in the public sector or with an NGO, and also actively seeking admission in to a graduate program. His research interests include the intersection between public policy and data science so to pursue evidence based policies. 
 
-Current work includes research on political and social sentiments in Pakistan using data from Twitter's API. In addition to this, he is working on independent programming and statistics projects (read more in blog section).
+Current work includes research on political and social sentiments in Pakistan using data from Twitter's API. In addition to this, he is working on independent programming and statistics projects (read more in blog section). Khizer is very passionate about E-Sports, and in his extra time freelances as a commentator for Overwatch and VALORANT tournaments. 
 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
