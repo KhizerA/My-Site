@@ -29,9 +29,9 @@ item:
   date_end: "2019-12-05"
   date_start: "2019-09-01"
   description: |- 
-    A comprehensive exploration of public policy in which political issues and their relevant policies are evaluated. Frameworks for analyzing existing and hypothetical policies, and methodologies for constructing policy proposals were taught through group discourse.
-  organization: Jonathan Craft
-  organization_url: https://munkschool.utoronto.ca/profile/craft-jonathan/
+    A comprehensive exploration of public policy in which political issues and their relevant policies are evaluated. Frameworks for analyzing existing and hypothetical policies, and methodologies for constructing policy proposals were taught through group debate.
+  organization: View Final Paper
+  organization_url: https://drive.google.com/file/d/1Lt6sjTuSXfj_Kgar_hMXXPvBxAcB9H-I/view?usp=sharing
   title: POL474 - Policy & Policy Analysis
   url: ""
 - certificate_url: ""
@@ -39,8 +39,8 @@ item:
   date_start: "2020-06-01"
   description: |- 
     Using multi-linear and non-linear regression models to draw inferences from data sets. Also learning various mechanisms for identifying and utilizing relevant variables to create optimal models, as well as determining causality.
-  organization: Nnenna Asidianya
-  organization_url: https://www.statistics.utoronto.ca/people/directories/graduate-students/nnenna-asidianya
+  organization: View Final Paper Repository
+  organization_url: https://github.com/KhizerA/Using-Regression-to-Determine-House-Prices/blob/master/Written%20Report.pdf
   title: STA302 - Methods of Data Analysis
   url: ""
 - certificate_url: ""
@@ -48,8 +48,8 @@ item:
   date_start: "2019-01-01"
   description: |- 
     An advanced course in quantitative empirical research methods for political science. Inferences are drawn from existing data to create analytical frameworks for examining global and domestic policy concerns.
-  organization: Kenichi Ariga
-  organization_url: https://munkschool.utoronto.ca/profile/ariga-kenichi/
+  organization: View Final Paper
+  organization_url: https://drive.google.com/file/d/1Zozj1ZlXYoaJNslKuCJa4jGrFMTf4BL1/view?usp=sharing
   title: POL419 - Quantative Methods and Data Analysis
   url: ""
 - certificate_url: ""
@@ -57,8 +57,8 @@ item:
   date_start: "2020-05-01"
   description: |- 
     Teaching urban development through a sustainability lens; using various existing cities as case studies by examining their various attempts of managing the urban sprawl. QGIS was an integral tool used to analyze micro and macro components of cities features.
-  organization: Alstan Jakubiec
-  organization_url: https://www.daniels.utoronto.ca/people/core-faculty/alstan-jakubiec
+  organization: View Final Presentation
+  organization_url: https://drive.google.com/file/d/1-Bio8XqgTnSnmF8ZUId1LCMAuJUdnbH6/view?usp=sharing
   title: ENV307 - Urban Sustainability
   url: ""
 
