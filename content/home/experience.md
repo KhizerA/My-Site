@@ -62,6 +62,6 @@ experience:
   date_end: "2019-06-01"
   date_start: "2017-05-01"
   description: |-
-    Assisting customers and closing sales using product knowledge. Responsibilities also included arranging the appearance of the store to maximize sales, and managing stock. 
+    Assisting customers and closing sales using product knowledge. Other responsibilities also included arranging the appearance of the store to maximize sales, and managing stock. 
   title: Sales Associate (Part-time)
 ---
