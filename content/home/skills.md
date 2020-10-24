@@ -42,7 +42,7 @@ subtitle = ""
 [[feature]]
   icon = "map-marked-alt"
   icon_pack = "fas"
-  name = "QGIS"
+  name = "GIS"
   
 [[feature]]
   icon = "hashtag"
