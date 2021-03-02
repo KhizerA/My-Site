@@ -81,4 +81,4 @@ Khizer Asad is a recent graduate looking for a professional or research position
 Current work includes research on political and social sentiments in Pakistan using data from Twitter's API, using machine learning and NLP strategies. In addition to this, he is working on independent programming and statistics projects (read more in blog section). Khizer is very passionate about E-Sports, and in his free time freelances as a coach and commentator. 
 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
