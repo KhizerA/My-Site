@@ -26,12 +26,11 @@ interests:
 # Education to show in About widget
 education:
   courses:
-  - course: BSc in Political Science, Statistics, Mathematics
+  - course: MicroMasters in Data, Economics, and Development Policy
+    institution: MIT
+  - course: BSc in Political Science, Statistics, and Mathematics
     institution: University of Toronto
-    year: 2020
-  - course: International Baccalaureate Diploma
-    institution: Dubai American Academy
-    year: 2015
+
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
