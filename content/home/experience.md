@@ -25,6 +25,14 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   You can begin a multiline `description` using YAML's `|-`.
 experience:
+- company: Signal Hill Insights
+  company_url: "https://signalhillinsights.com/"
+  date_end: ""
+  date_start: "2021-01-05"
+  description: |-
+    Collecting and analyzing data for clients to provide branding and marketing insights via conducting surveys and data mining, Then producing presentations and reports with our findings. I am also responsible for managing our social media presence to optimize engagements. 
+  location: Toronto
+  title: Data Analyst     
 - company: Pakistan Development Foundation (non-profit)
   company_url: ""
   date_end: "2020-06-01"

@@ -18,9 +18,9 @@ bio: My research interests include policy, development, and data science.
 
 # Interests to show in About widget
 interests:
+- Economics
+- Data Science
 - Public Policy
-- Statistics
-- Education
 - Development Studies
 
 # Education to show in About widget
@@ -75,9 +75,10 @@ user_groups:
 - Principal Investigators
 ---
 
-Khizer Asad is a recent graduate looking for a professional or research position. He is keen on pursuing a career in the public sector or with an NGO, with the goal of serving those most in need. His research interests include the intersection between public policy and data science so to pursue evidence based policies. 
+Hi I'm Khizer! (pronounced Kh-zer)
 
-Current work includes research on political and social sentiments in Pakistan using data from Twitter's API, using machine learning and NLP strategies. In addition to this, he is working on independent programming and statistics projects (read more in blog section). Khizer is very passionate about E-Sports, and in his free time freelances as a coach and commentator. 
+A recent graduate seeking a professional or research position, I am keen on pursuing a career in Data Science and/or Public Policy, with the goal of improving human welfare. I have experience working in consulting and non-profits, and currently hold the position of Data Analyst based out of Toronto. My research interests are quite diverse and include Education, Political Economy, and History, with an a strong component of quantitative analysis. 
 
+My current work involves surveying and data mining, for a more comprehensive list of my competencies please refer to my CV. I greatly value effective communication, some examples of my work can be found in the blog section, where I share some of my personal data focused projects. In addition to this, I am very passionate about Esports, and freelance as a coach/commentator in my spare time. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

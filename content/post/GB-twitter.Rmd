@@ -1,5 +1,5 @@
 ---
-title: "Fighting election fraud in Pakistan via Twitter with sentiment analysis"
+title: "Auditing election results via Twitter with sentiment analysis"
 author: "Khizer Asad"
 date: 2020-12-12T13:09:13-06:00
 subtitle: A critical analysis of Gilgit-Baltistan general election results 

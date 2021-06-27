@@ -51,7 +51,7 @@ hero_media = ""
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" #data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
 
-**Available for full-time positions or short-term work**
+#**Available for full-time positions or short-term work**
 
 Please refer to my website and resume below for more details
 
