@@ -40,9 +40,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto:KhizerAsad1@gmail.com'
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/khizfizz
+#- icon: twitter
+#  icon_pack: fab
+#  link: https://twitter.com/khizfizz
 #- icon: graduation-cap  # OR `google-scholar`
 #  icon_pack: fas  # OR `ai`
 #  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
